@@ -20,12 +20,16 @@ public class AlunoService {
         repository.save(aluno);
     }
 
+    public Optional<Aluno> findById(Long id) {
+        return repository.findById(id);
+    }
+
     public List<Aluno> findAll() {
         return repository.findAll();
     }
 
-    public Optional<Aluno> findById(Long id) {
-        return repository.findById(id);
+    public void deleteById(Long id) {
+        repository.deleteById(id);
     }
 
     public void update(Long id, Aluno aluno) {
@@ -43,11 +47,6 @@ public class AlunoService {
 
         repository.save(alunoUpdated);
     }
-
-    public void deleteById(Long id) {
-        repository.deleteById(id);
-    }
-
 
 
 }

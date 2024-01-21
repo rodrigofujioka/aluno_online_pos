@@ -22,28 +22,28 @@ public class AlunoController {
         service.create(aluno);
     }
 
-    @GetMapping("/all")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Aluno> findAll() {
-        return service.findAll();
-    }
-
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Aluno> findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@PathVariable Long id, @RequestBody Aluno aluno) {
-        service.update(id, aluno);
+    @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Aluno> findAll() {
+        return service.findAll();
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id) {
         service.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@PathVariable Long id, @RequestBody Aluno aluno) {
+        service.update(id, aluno);
     }
 
 }
