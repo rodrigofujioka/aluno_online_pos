@@ -24,6 +24,12 @@ public class AlunoService {
         return repository.findById(id);
     }
 
+
+    public Aluno buscarPorEmail(String email){
+        return repository.findByEmail(email);
+    }
+
+
     public List<Aluno> findAll() {
         return repository.findAll();
     }

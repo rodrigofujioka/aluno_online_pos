@@ -28,6 +28,12 @@ public class AlunoController {
         return service.findById(id);
     }
 
+    @GetMapping("/email/{email}")
+    @ResponseStatus(HttpStatus.OK)
+    public Aluno buscarPorEmail(@PathVariable String email){
+        return service.buscarPorEmail(email);
+    }
+
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Aluno> findAll() {
