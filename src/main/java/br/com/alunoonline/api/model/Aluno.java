@@ -20,7 +20,7 @@ public class Aluno {
     private String nome;
     @NotEmpty
     @Email
-    @Column(name = "ds_email",length = 400, unique = true)
+    @Column(length = 400, unique = true)
     private String email;
 
     private String cpf;

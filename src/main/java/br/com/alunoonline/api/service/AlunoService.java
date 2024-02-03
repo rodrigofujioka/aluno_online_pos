@@ -29,6 +29,19 @@ public class AlunoService {
         return repository.findByEmail(email);
     }
 
+    public Aluno buscarPorEmailJPQL(String email){
+        return repository.buscarPorEmail(email);
+    }
+    public List<Aluno> listarTodosOrdenadaPorNome(){
+        return repository.listarTodosAlunosOrdenadoPorNome();
+    }
+    public Aluno buscarPorNomeEmail(String nome, String email){
+        return repository.findByNomeAndEmail(nome, email);
+    }
+
+
+
+
 
     public List<Aluno> findAll() {
         return repository.findAll();
