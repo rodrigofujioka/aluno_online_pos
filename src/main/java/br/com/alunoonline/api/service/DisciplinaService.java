@@ -5,6 +5,8 @@ import br.com.alunoonline.api.repository.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DisciplinaService {
 
@@ -14,4 +16,10 @@ public class DisciplinaService {
     public void create(Disciplina disciplina) {
         repository.save(disciplina);
     }
+
+
+    public List<Disciplina> listarPorEmailProfessor(String email){
+        return repository.listarDisciplinasPorProfessor(email);
+    }
+
 }

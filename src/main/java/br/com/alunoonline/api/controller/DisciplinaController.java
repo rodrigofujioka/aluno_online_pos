@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/disciplina")
 public class DisciplinaController {
@@ -18,4 +20,11 @@ public class DisciplinaController {
     public void create(@RequestBody Disciplina disciplina) {
         service.create(disciplina);
     }
+
+    @GetMapping("/professor/email/{email}/asc")
+    public List<Disciplina> listarPorEmailProfessor(@PathVariable String email){
+        return service.listarPorEmailProfessor(email);
+    }
+
+
 }
