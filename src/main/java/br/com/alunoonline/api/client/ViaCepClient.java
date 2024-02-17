@@ -1,4 +1,4 @@
-package br.com.alunoonline.api.controller;
+package br.com.alunoonline.api.client;
 
 
 import org.springframework.cloud.openfeign.FeignClient;
