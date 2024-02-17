@@ -2,6 +2,7 @@ package br.com.alunoonline.api.controller;
 
 import br.com.alunoonline.api.client.ViaCepClient;
 import br.com.alunoonline.api.model.Aluno;
+import br.com.alunoonline.api.model.dto.AlunoDTO;
 import br.com.alunoonline.api.service.AlunoService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class AlunoController {
     public ResponseEntity<String> consultarCep(@PathVariable String cep){
         log.info("Consultando Cep do aluno : " + cep);
         return ResponseEntity.ok(viaCepClient.consultaCep(cep));
+    }
+
+    @GetMapping("/nome/email/{id}")
+    public ResponseEntity<AlunoDTO> consultarEmailAlunoByID(@PathVariable Long id){
+        return ResponseEntity.ok(service.consultaAlunoEmail(id));
     }
 
 
