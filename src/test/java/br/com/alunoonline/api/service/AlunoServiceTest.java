@@ -20,7 +20,6 @@ import java.util.Optional;
 @ExtendWith(MockitoExtension.class)
 class AlunoServiceTest {
 
-
     @Mock
     AlunoRepository alunoRepository;
 

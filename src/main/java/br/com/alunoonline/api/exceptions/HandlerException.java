@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class HandlerException {
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ResponseEntity<ErrorDTO> handleException(Exception e) {
+    public ResponseEntity<ErrorDTO> handlerException(Exception e) {
 
         ErrorDTO erroCapturado =
                 ErrorDTO.builder() //
@@ -35,7 +35,7 @@ public class HandlerException {
 
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseBody
-    public ResponseEntity<ErrorDTO> handleException(NoSuchElementException e) {
+    public ResponseEntity<ErrorDTO> handlerException(NoSuchElementException e) {
 
         ErrorDTO erroCapturado =
                 ErrorDTO.builder() //
@@ -50,7 +50,7 @@ public class HandlerException {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
-    public ResponseEntity<ErrorDTO> handleException(MethodArgumentNotValidException e) {
+    public ResponseEntity<ErrorDTO> handlerException(MethodArgumentNotValidException e) {
 
 
         List<String> constraintsViolated = e.getBindingResult()
