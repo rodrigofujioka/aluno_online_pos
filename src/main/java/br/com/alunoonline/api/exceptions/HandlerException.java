@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Order
 @Log4j2
 @ControllerAdvice
-public class HandleExceptions {
+public class HandlerException {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseEntity<ErrorDTO> handleException(Exception e) {
