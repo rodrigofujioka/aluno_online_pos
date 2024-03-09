@@ -47,6 +47,20 @@ public class HandlerException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erroCapturado);
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseBody
+    public ResponseEntity<ErrorDTO> handlerException(RuntimeException e) {
+
+        ErrorDTO erroCapturado =
+                ErrorDTO.builder() //
+                        .error(HttpStatus.NOT_FOUND.getReasonPhrase()) //
+                        .detalhes(e.getMessage())
+                        .build();
+
+        log.info("Erros", e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(erroCapturado);
+    }
+
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody

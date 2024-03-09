@@ -17,9 +17,22 @@ public class DisciplinaService {
         repository.save(disciplina);
     }
 
+    public void atualizar(Disciplina disciplina) {
+        if(disciplina.getId()==null){
+          throw new RuntimeException("ID não preenchido");
+        }
+        repository.save(disciplina);
+    }
 
     public List<Disciplina> listarPorEmailProfessor(String email){
         return repository.listarDisciplinasPorProfessor(email);
     }
+
+    public List<Disciplina> listar(){
+        return repository.findAll();
+    }
+
+
+
 
 }

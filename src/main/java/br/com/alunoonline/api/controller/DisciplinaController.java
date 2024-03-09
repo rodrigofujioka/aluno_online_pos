@@ -26,5 +26,10 @@ public class DisciplinaController {
         return service.listarPorEmailProfessor(email);
     }
 
+    @GetMapping
+    public List<Disciplina> getDisciplinas(){
+        return service.listar();
+    }
+
 
 }
