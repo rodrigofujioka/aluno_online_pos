@@ -21,6 +21,11 @@ public class DisciplinaController {
         service.create(disciplina);
     }
 
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@RequestBody Disciplina disciplina) {
+        service.atualizar(disciplina);
+    }
     @GetMapping("/professor/email/{email}/asc")
     public List<Disciplina> listarPorEmailProfessor(@PathVariable String email){
         return service.listarPorEmailProfessor(email);
