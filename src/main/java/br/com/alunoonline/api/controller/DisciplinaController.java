@@ -31,5 +31,10 @@ public class DisciplinaController {
         return service.listar();
     }
 
+    @PostMapping("/importar")
+    public void importarDisciplinas(){
+        service.importarDisciplinas();
+    }
+
 
 }
